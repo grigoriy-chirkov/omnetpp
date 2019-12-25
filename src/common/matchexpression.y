@@ -22,7 +22,8 @@
 %left AND_
 %left NOT_
 
-%pure_parser
+%pure-parser
+%param {void *statePtr}
 
 %start expression
 
@@ -39,7 +40,7 @@
 #include <string.h>         /* YYVERBOSE needs it */
 #endif
 
-void yyerror (const char *s);
+void yyerror (void *statePtr, const char *s);
 
 #include "matchexpression.h"
 #include "matchexpressionlexer.h"
@@ -131,7 +132,7 @@ void MatchExpression::parsePattern(std::vector<MatchExpression::Elem>& elems, co
     yyparse(&state);
 }
 
-void yyerror(const char *s)
+void yyerror(void *statePtr, const char *s)
 {
     // chop newline
     char buf[250];

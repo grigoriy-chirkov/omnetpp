@@ -2357,8 +2357,8 @@ if test "$TOOLCHAIN" = "mingw"; then
     cxx_candidates="i586-mingw32msvc-g++"
 else
     # icc, icpc: Intel compiler (further ones: Sun Studio: cxx, IBM: xlC)
-    cc_candidates="icc gcc cc xlc"
-    cxx_candidates="icpc g++ c++ cxx xlC"
+    cc_candidates="gcc icc cc xlc"
+    cxx_candidates="g++ icpc c++ cxx xlC"
 fi
 
 # the below macros should be present only ONCE in the whole file (otherwise bad things will happen)

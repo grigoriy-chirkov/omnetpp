@@ -22,6 +22,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string>
+#include <unistd.h>
 #ifdef _WIN32
 #include <direct.h>
 #include <stdlib.h>

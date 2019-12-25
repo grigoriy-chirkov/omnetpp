@@ -305,7 +305,7 @@ sub processFile($)
     $NAME = '([A-Za-z_][A-Za-z0-9_]*)';  # 1 group
     $QNAME = "((::)?($NAME\:\:)*$NAME)"; # 5 groups
 
-    $CPLUSPLUS_BLOCK = '\bcplusplus\s+{{(.*?)}};?';  # 1 group (contains body)
+    $CPLUSPLUS_BLOCK = '\bcplusplus\s+\{\{(.*?)\}\};?';  # 1 group (contains body)
     $NAMESPACE_DECL = '\bnamespace\s+([A-Za-z0-9_:]+)\s*;'; # 1 group (contains name)
 
     # encode cplusplus blocks in a copy of msg, so that we don't accidentally match namespace keywords in them

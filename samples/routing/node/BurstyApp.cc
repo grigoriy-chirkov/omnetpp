@@ -31,9 +31,9 @@ class BurstyApp : public cSimpleModule
     cFSM fsm;
     enum {
        INIT = 0,
-       SLEEP = FSM_Steady(1),
-       ACTIVE = FSM_Steady(2),
-       SEND = FSM_Transient(1),
+       SLEEP = FSM_Steady(uint(1)),
+       ACTIVE = FSM_Steady(uint(2)),
+       SEND = FSM_Transient(uint(1)),
     };
 
     int pkCounter;
